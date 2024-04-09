@@ -3,8 +3,8 @@ public class Mago extends Personagem{
     private String vestes;
     private String invocacaoNome;
 
-    public Mago(String nome, String cor, double altura, int idade, int forca, int defesa, int vigor, int mana, int stamina, String cajado, String vestes, String invocacaoNome) {
-        super(nome, cor, altura, idade, forca, defesa, vigor, mana, stamina);
+    public Mago(String nome, String raca, double altura, int idade,int forca, int defesa, int vigor, int mana, int stamina, String habilidade1, String habilidade2, String habilidade3, String habilidade4, String cajado, String vestes, String invocacaoNome) {
+        super(nome, raca, altura, idade,forca, defesa, vigor, mana, stamina,habilidade1, habilidade2, habilidade3, habilidade4);
         this.cajado = cajado;
         this.vestes = vestes;
         this.invocacaoNome = invocacaoNome;
@@ -34,11 +34,14 @@ public class Mago extends Personagem{
         this.invocacaoNome = invocacaoNome;
     }
 
-    public String toString(){
-        return("Nome: " + getNome() +
+    @Override
+    public String fichaTecnica(){
+        return("   Dados Basicos - Mago" +
+                "\nNome: " + getNome() +
                 "\nAltura: " + getAltura() +
-                "\nCor: " + getCor() +
+                "\nCor: " + getRaca() +
                 "\nIdade: " + getIdade() +
+                "\nNivel: " + getNivel() +
                 "\n" +
                 "\nPontos de Habilidades" +
                 "\nPontos de Forca: " + getForca() +
@@ -47,11 +50,16 @@ public class Mago extends Personagem{
                 "\nPontos de Mana: " + getMana() +
                 "\nPontos de Stamina: " + getStamina() +
                 "\n" +
-                "\nEquipamentos & Invocacoes" +
-                "\nVestimenta: " + vestes +
+                "\nEquipamentos & Invocações" +
+                "\nArmadura: " + vestes +
                 "\nArmamento: " + cajado +
-                "\nInvocacao: " + invocacaoNome
+                "\nEscudo: " + invocacaoNome +
+                "\n" +
+                "\nHabilidades " +
+                "\nPrimeira Habilidade: " + getHabilidade1() +
+                "\nSegunda Habilidade: " + getHabilidade2() +
+                "\nTerceira Habilidade: " + getHabilidade3() +
+                "\nQuarta Habilidade: " + getHabilidade4()
         );
     }
-
 }
